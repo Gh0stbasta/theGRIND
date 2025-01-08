@@ -1,0 +1,41 @@
+body {
+  background: linear-gradient(to top right, rgb(132, 221, 217), rgb(219, 230, 232));
+  margin: 0px;
+  padding: 0px;
+  color: rgb(21, 56, 50);
+  text-align: center;
+  font-family: "Bebas Neue", serif;
+  font-size: 30px;
+  padding: 100px;
+}
+
+.top-header {
+    border: solid 2px green;
+    border-radius: 20px;
+    width: 50%;
+    padding: 20px;
+    margin: 10px auto;
+}
+
+.card {
+    border: solid 2px green;
+    border-radius: 20px;
+    width: 54%;
+    margin: 10px auto;
+    text-align: center;
+}
+
+button {
+    border-radius: 10px;
+    background-color: rgb(8, 59, 42);
+    color: white;
+    font-size: 20px;
+    padding: 8px;
+    margin: 5px;
+}
+
+input {
+    font-size: 25px;
+    padding: 2px;
+    text-align: center;
+}
