@@ -18,7 +18,7 @@ const note_item = () => {
     item.id = note;
 
     const delItemButton = document.createElement("button");
-    delItemButton.textContent = "DELETE";
+    delItemButton.textContent = "delete";
     delItemButton.id = note;
     delItemButton.onclick = () => {
       delete_item(delItemButton.id);
