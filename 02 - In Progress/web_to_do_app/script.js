@@ -18,6 +18,7 @@ const get_from_browser = () => {
 };
 
 const save_to_browser = () => {
+  localStorage.clear();
   localStorage.setItem("toDoArray", JSON.stringify(toDoArray));
   console.log("saved to browserfile");
 };
@@ -32,20 +33,31 @@ const display_note = (note) => {
   console.log(toDoArray);
   inputValue.value = "";
 
+  const containerDiv = document.createElement("div");
+  containerDiv.classList.add("list-card");
+
   const item = document.createElement("li");
   item.textContent = note;
   item.id = `a${noteIndex}`;
 
+  const doneButton = document.createElement("button");
+  doneButton.textContent = "Mark done";
+  doneButton.id = `a${noteIndex}`;
+  doneButton.onclick = () => {
+    mark_done(doneButton.id);
+  };
+
   const delItemButton = document.createElement("button");
   delItemButton.textContent = "delete";
-
   delItemButton.id = `a${noteIndex}`;
   delItemButton.onclick = () => {
     delete_item(delItemButton.id);
   };
 
-  noteList.appendChild(item);
-  noteList.appendChild(delItemButton);
+  item.appendChild(doneButton);
+  item.appendChild(delItemButton);
+  containerDiv.appendChild(item);
+  noteList.appendChild(containerDiv);
 };
 
 const note_item = () => {
@@ -57,6 +69,12 @@ const note_item = () => {
     display_note(note);
   }
 };
+
+const mark_done = (buttonID) => {
+  const button = document.getElementById(buttonID);
+  button.classList.toggle("mark-done");
+}
+
 
 const delete_item = (note) => {
   console.log(toDoArray);

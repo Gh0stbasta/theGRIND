@@ -1,8 +1,9 @@
 body {
+  min-height: 100vh;
   background: linear-gradient(
     to top right,
-    rgb(178, 231, 229),
-    rgb(219, 230, 232)
+    rgb(219, 230, 232),
+    rgb(139, 229, 229)
   );
   margin: 0px;
   padding: 0px;
@@ -23,9 +24,12 @@ body {
 }
 
 .card {
-  width: 100%;
-  margin: 10px auto;
+  width: 70%;
+  margin: 5px auto;
   text-align: center;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  padding: 10px;
 }
 
 button {
@@ -36,6 +40,7 @@ button {
   color: white;
   font-size: 15px;
   padding: 5px;
+  margin-left: 10px;
 }
 
 input {
@@ -48,5 +53,15 @@ input {
 
 li {
   padding: 8px;
-  font-size: 15px;
+  font-size: 25px;
+  list-style-type:decimal-leading-zero;
+}
+
+.list-card {
+  border-radius: 20px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+}
+
+.mark-done {
+  text-decoration: line-through;
 }

@@ -14,18 +14,20 @@
   <body>
     <h1 class="top-header">TO DO WEB-APP</h1>
 
-    <button onclick="get_from_browser()">Get saved chores</button>
+    <div class="card">
+    <button onclick="get_from_browser()">Get saved tasks</button>
     <button onclick="save_to_browser()">Save to Browser</button>
     <button onclick="clear_browser_file()">Clear Browserfile</button>
+    </div>
 
     <div class="card">
         <label>Plan your work: </label><br>
-        <input placeholder="enter chore" /><br>
+        <input placeholder="enter task" onkeypress="if(event.key === 'Enter') note_item()" /><br>
         <button id="take-note" onclick="note_item()">take note</button>
     </div>
     <div class="card">
         <ul id="note-list">
-        Here are your chores:
+        Here are your tasks:
         </ul>
     </div>
 
