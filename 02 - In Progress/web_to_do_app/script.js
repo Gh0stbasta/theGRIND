@@ -2,87 +2,119 @@ const button = document.getElementById("take-note");
 const inputValue = document.querySelector("input");
 const noteList = document.getElementById("note-list");
 
+// the list for our notes
 const toDoArray = [];
 
-const get_from_browser = () => {
-  const loadChores = JSON.parse(localStorage.getItem("toDoArray"));
-
-  if (loadChores) {
-    loadChores.forEach((note) => {
-      console.log("note value:" + note);
-      toDoArray.push(note);
-      display_note(note);
-    });
+class Note {
+  // Data Structure for Notes
+  constructor(id, text, isDone = false) {
+    this.id = id;
+    this.text = text;
+    this.isDone = isDone;
   }
-  console.log("laoded file from browser");
-};
+}
 
-const save_to_browser = () => {
-  localStorage.clear();
-  localStorage.setItem("toDoArray", JSON.stringify(toDoArray));
-  console.log("saved to browserfile");
-};
+const note_item = () => {
+  //creating an unique ID for every note
+  const noteId = "a" + toDoArray.length;
+  //pulling the userinput
+  const noteText = inputValue.value;
 
-const clear_browser_file = () => {
-  localStorage.clear();
-  console.log("cleared browserfile");
+  if (!noteText) {
+    //empty notes are not allowed
+    alert("Please insert a chore");
+  } else {
+    //create a new Note object
+    const note = new Note(noteId, noteText);
+    //adding it to the List
+    toDoArray.push(note);
+    //let it show up on the screen
+    display_note(note);
+  }
 };
 
 const display_note = (note) => {
-  const noteIndex = toDoArray.indexOf(note);
-  console.log(toDoArray);
+  //emptying the input, so that the user can create new input
   inputValue.value = "";
 
+  //creating a wrap up container
   const containerDiv = document.createElement("div");
   containerDiv.classList.add("list-card");
 
+  //creating the list element
   const item = document.createElement("li");
-  item.textContent = note;
-  item.id = `a${noteIndex}`;
+  if (note.isDone) {
+    //if its pulled from the browser cache it has to show up
+    item.classList.toggle("mark-done");
+  }
+  item.textContent = note.text;
+  item.id = note.id;
 
+  //two buttons for the user to manage the tasks
   const doneButton = document.createElement("button");
-  doneButton.textContent = "Mark done";
-  doneButton.id = `a${noteIndex}`;
+  doneButton.textContent = "toggle done";
+  doneButton.id = note.id;
   doneButton.onclick = () => {
     mark_done(doneButton.id);
   };
-
   const delItemButton = document.createElement("button");
   delItemButton.textContent = "delete";
-  delItemButton.id = `a${noteIndex}`;
+  delItemButton.id = note.id;
   delItemButton.onclick = () => {
     delete_item(delItemButton.id);
   };
 
+  //pushing all the elements to the window
   item.appendChild(doneButton);
   item.appendChild(delItemButton);
   containerDiv.appendChild(item);
   noteList.appendChild(containerDiv);
 };
 
-const note_item = () => {
-  const note = inputValue.value;
-  if (!note) {
-    alert("Please insert a chore");
-  } else {
-    toDoArray.push(note);
-    display_note(note);
-  }
+const mark_done = (buttonID) => {
+  //only get the first item with the id to get the right list item
+  const item = document.getElementById(buttonID);
+
+  //toggling the status within the object
+  const noteIndex = toDoArray.findIndex((note) => note.id === buttonID);
+  toDoArray[noteIndex].isDone = !toDoArray[noteIndex].isDone;
+  item.classList.toggle("mark-done");
 };
 
-const mark_done = (buttonID) => {
-  const button = document.getElementById(buttonID);
-  button.classList.toggle("mark-done");
-}
-
-
-const delete_item = (note) => {
-  console.log(toDoArray);
-
-  const elementsToDelete = document.querySelectorAll(`#${note}`);
+const delete_item = (buttonID) => {
+  //getting all things (1 list element and 2 buttons) with the same ID
+  const elementsToDelete = document.querySelectorAll(`#${buttonID}`);
+  //deleting all elements from window
   elementsToDelete.forEach((element) => element.remove());
-
-  const noteIndex = toDoArray.indexOf(note);
-  console.log(noteIndex);
+  //deleting the note-object from the list
+  const noteIndex = toDoArray.indexOf(buttonID);
   toDoArray.splice(noteIndex);
+};
+
+const get_from_browser = () => {
+  // getting the data from the browser storage
+  const loadTasks = JSON.parse(localStorage.getItem("toDoArray"));
+  // pushing the tasks into the array one by one
+  if (loadTasks) {
+    loadTasks.forEach((note) => {
+      toDoArray.push(note);
+      display_note(note);
+    });
+  }
+  //removing button functionality to prevent multiple loadings
+  const button = document.getElementById("get-browser-data");
+  button.onclick = null;
+  button.classList.toggle("mark-done");
+};
+
+const clear_browser_file = () => {
+  // clearing cache
+  localStorage.clear();
+  location.reload();  
+};
+
+const save_to_browser = () => {
+  // saving the array to the browserstorage
+  localStorage.clear();
+  localStorage.setItem("toDoArray", JSON.stringify(toDoArray));
 };
