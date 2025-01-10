@@ -4,6 +4,7 @@ const noteList = document.getElementById("note-list");
 
 // the list for our notes
 const toDoArray = [];
+let counterId = 0;
 
 class Note {
   // Data Structure for Notes
@@ -15,14 +16,15 @@ class Note {
 }
 
 const note_item = () => {
-  //creating an unique ID for every note
-  const noteId = "a" + toDoArray.length;
+  //creating a unique ID for every note
+  const noteId = "a" + counterId;
+  counterId++;
   //pulling the userinput
   const noteText = inputValue.value;
 
   if (!noteText) {
     //empty notes are not allowed
-    alert("Please insert a chore");
+    alert("Please insert a task");
   } else {
     //create a new Note object
     const note = new Note(noteId, noteText);
@@ -40,6 +42,7 @@ const display_note = (note) => {
   //creating a wrap up container
   const containerDiv = document.createElement("div");
   containerDiv.classList.add("list-card");
+  containerDiv.id = note.id;
 
   //creating the list element
   const item = document.createElement("li");
@@ -74,11 +77,14 @@ const display_note = (note) => {
 const mark_done = (buttonID) => {
   //only get the first item with the id to get the right list item
   const item = document.getElementById(buttonID);
-
-  //toggling the status within the object
-  const noteIndex = toDoArray.findIndex((note) => note.id === buttonID);
-  toDoArray[noteIndex].isDone = !toDoArray[noteIndex].isDone;
   item.classList.toggle("mark-done");
+  //toggling the status within the object
+  let noteIndex = toDoArray.findIndex((note) => note.id == buttonID);
+  console.log(buttonID);
+  console.log(toDoArray);
+  const note = toDoArray[noteIndex];
+  console.log(noteIndex);
+  toDoArray[noteIndex].isDone = !toDoArray[noteIndex].isDone;
 };
 
 const delete_item = (buttonID) => {
@@ -86,9 +92,9 @@ const delete_item = (buttonID) => {
   const elementsToDelete = document.querySelectorAll(`#${buttonID}`);
   //deleting all elements from window
   elementsToDelete.forEach((element) => element.remove());
-  //deleting the note-object from the list
-  const noteIndex = toDoArray.indexOf(buttonID);
-  toDoArray.splice(noteIndex);
+  //deleting the note-object from the list and inserting an empty string for bugfix from length problem
+  let noteIndex = toDoArray.findIndex((note) => note.id == buttonID);
+  toDoArray.splice(noteIndex, 1, "");
   save_to_browser();
 };
 
