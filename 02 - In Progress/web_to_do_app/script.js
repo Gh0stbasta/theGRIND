@@ -89,6 +89,7 @@ const delete_item = (buttonID) => {
   //deleting the note-object from the list
   const noteIndex = toDoArray.indexOf(buttonID);
   toDoArray.splice(noteIndex);
+  save_to_browser();
 };
 
 const get_from_browser = () => {
@@ -110,7 +111,7 @@ const get_from_browser = () => {
 const clear_browser_file = () => {
   // clearing cache
   localStorage.clear();
-  location.reload();  
+  location.reload();
 };
 
 const save_to_browser = () => {
