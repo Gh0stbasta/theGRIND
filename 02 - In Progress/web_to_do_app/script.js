@@ -105,7 +105,11 @@ const get_from_browser = () => {
   if (loadTasks) {
     loadTasks.forEach((note) => {
       toDoArray.push(note);
-      display_note(note);
+      counterId++;
+      // because of bugfix in delete_note we also have to handle the empty notes
+      if (note != "") {
+        display_note(note);
+      }
     });
   }
   //removing button functionality to prevent multiple loadings
@@ -125,3 +129,4 @@ const save_to_browser = () => {
   localStorage.clear();
   localStorage.setItem("toDoArray", JSON.stringify(toDoArray));
 };
+
