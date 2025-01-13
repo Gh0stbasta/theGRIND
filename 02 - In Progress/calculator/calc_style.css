@@ -1,0 +1,81 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  background: linear-gradient(
+    to bottom,
+    rgba(131, 235, 136, 0.672),
+    rgb(6, 22, 13)
+  );
+}
+
+main {
+  font-family: "silkscreen-regular";
+  justify-content: center;
+  margin: 2rem;
+}
+
+@font-face {
+  font-family: "silkscreen-regular";
+  src: url("./assets/fonts/silkscreen/Silkscreen-Regular.ttf");
+}
+
+@font-face {
+  font-family: "silkscreen-bold";
+  src: url("./assets/fonts/silkscreen/Silkscreen-Bold.ttf");
+}
+
+header {
+  text-align: center;
+  font-family: "silkscreen-bold";
+  font-size: 250%;
+  color: white;
+  background-color: rgb(68, 99, 89);
+  border-radius: 2rem;
+  box-shadow: 0 0 20px white;
+}
+
+input {
+  width: 80%;
+  margin: 5px;
+  height: 70px;
+  font-size: 2rem;
+  font-family: "silkscreen-regular";
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.button-container {
+  margin-top: 30px;
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+button {
+  width: 19%;
+  height: 60px;
+  border-radius: 10px;
+  border: none;
+  background-color: rgb(68, 99, 89);
+  color: whitesmoke;
+  margin: 5px;
+  font-family: "silkscreen-regular";
+  font-size: 1.5rem;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.499);
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+button:active {
+  transform: scale(0.9);
+}
