@@ -1,0 +1,1 @@
+- Bug //  App is laoding empty tasks, when tasks are deleted and saved. This is due to the index problem in the array
