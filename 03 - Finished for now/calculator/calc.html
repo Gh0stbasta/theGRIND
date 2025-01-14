@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="./calc_style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>CALCULATOR</h1>
+    </header>
+    <main>
+      <input id="output" disabled/>
+
+      <div class="button-container">
+        <button onclick="clearOutputAndCache()">CE</button>
+        <button onclick="undoLastCharacter()">DEL</button>
+        <button onclick="sendValue('%')">MOD</button>
+        <button onclick="sendValue('**')">**</button>
+
+        <button onclick="sendValue('7')">7</button>
+        <button onclick="sendValue('8')">8</button>
+        <button onclick="sendValue('9')">9</button>
+        <button onclick="sendValue('/')">/</button>
+
+        <button onclick="sendValue('4')">4</button>
+        <button onclick="sendValue('5')">5</button>
+        <button onclick="sendValue('6')">6</button>
+        <button onclick="sendValue('*')">*</button>
+
+        <button onclick="sendValue('1')">1</button>
+        <button onclick="sendValue('2')">2</button>
+        <button onclick="sendValue('3')">3</button>
+        <button onclick="sendValue('-')">-</button>
+
+        <button onclick="sendValue('0')">0</button>
+        <button onclick="sendValue(',')">,</button>
+        <button onclick="doCalculation()">=</button>
+        <button onclick="sendValue('+')">+</button>
+
+      </div>
+    </main>
+
+    <script src="./calc.js"></script>
+  </body>
+</html>
