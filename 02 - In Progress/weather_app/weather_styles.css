@@ -1,0 +1,168 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom right, #f1f4348a,#a2e79df3);
+    overflow: hidden;
+}
+
+/* CSS Art Sun */
+
+.sun{
+    position: absolute;
+    right: -5%;
+    top: -2%;
+    z-index: -1;
+    height: 50vh;
+    width: 50vh;
+}
+
+.sunface {
+    background-color: yellow;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: row;
+}
+
+.suneye {
+    height: 30%;
+    width: 30%;
+    border: 6px solid black;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    position: relative;
+    top: 30%;
+    border-radius: 50%;
+}
+
+.suneye.left {
+    left: 15%;
+}
+
+.suneye.right {
+    left: 28%;
+}
+
+.sunmouth {
+    height: 30%;
+    width: 50%;
+    border: 8px solid black;
+    border-radius: 50%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    position: relative;
+    top: 45%;
+    right: 26%;
+}
+
+.sunray {
+    background-color: yellow;
+    height: 70%;
+    width: 5%;
+    border-radius: 25px;
+}
+
+.sunray.one {
+    position: absolute;
+    left: -15%;
+    bottom: 70%;
+    transform: rotate(130deg);
+}
+
+.sunray.two {
+    position: absolute;
+    left: -32%;
+    bottom: 40%;
+    transform: rotate(105deg);
+}
+
+.sunray.three {
+    position: absolute;
+    left: -32%;
+    bottom: 0%;
+    transform: rotate(80deg);
+}
+
+.sunray.four {
+    position: absolute;
+    left: -2%;
+    bottom: -32%;
+    transform: rotate(40deg);
+}
+
+.sunray.five {
+    position: absolute;
+    left: 30%;
+    bottom: -50%;
+    transform: rotate(10deg);
+}
+
+.sunray.six {
+    position: absolute;
+    left: 80%;
+    bottom: -50%;
+    transform: rotate(-25deg);
+}
+
+.sunray.seven {
+    position: absolute;
+    left: 110%;
+    bottom: -20%;
+    transform: rotate(-60deg);
+}
+
+
+
+
+/* Content */
+
+@font-face {
+    font-family: 'luckiest-guy';
+    src: url("./assets/fonts/luckiest-guy/LuckiestGuy-Regular.ttf");
+}
+
+.main-content {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'luckiest-guy';
+}
+
+.headline {
+    color: #5FE886;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.647);
+}
+
+#city-entry{
+    width: 40%;
+    padding: 5px;
+    margin-bottom: 20px;
+    border-radius: 25px;
+    text-align: center;
+    font-family: 'luckiest-guy'
+}
+
+button {
+    border-radius: 25px;
+    padding: 5px 10px 5px 10px;
+    background-color: #A5EBB9;
+    border: none;
+    font-family: 'luckiest-guy';
+    font-size: 1.5rem;
+    color: white;
+}
+
+#output {
+    width: 50%;
+    padding: 20px;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.228);
+    background-color: #5FE886;
+    color: whitesmoke;
+    border-radius: 25px;
+}
