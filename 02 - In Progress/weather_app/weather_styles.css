@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    background: linear-gradient(to bottom right, #f1f4348a,#a2e79df3);
+    background: linear-gradient(to bottom left, #f1f4348a,#fffffff3);
     overflow: hidden;
 }
 
@@ -131,35 +131,48 @@ body {
     align-items: center;
     flex-direction: column;
     font-family: 'luckiest-guy';
+    font-size: 1.5rem;
 }
 
 .headline {
     color: #5FE886;
-    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.647);
+    text-shadow: 0 0px 10px rgba(255, 255, 255, 0.8);
 }
 
-#city-entry{
+#input-city{
     width: 40%;
     padding: 5px;
     margin-bottom: 20px;
     border-radius: 25px;
     text-align: center;
-    font-family: 'luckiest-guy'
+    font-family: 'luckiest-guy';
+    font-size: 1.5rem;
 }
 
 button {
     border-radius: 25px;
     padding: 5px 10px 5px 10px;
+    margin-left: 20px;
     background-color: #A5EBB9;
     border: none;
     font-family: 'luckiest-guy';
     font-size: 1.5rem;
     color: white;
+    transition: 0.02s;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+button:active {
+    transform: scale(0.9);
 }
 
 #output {
     width: 50%;
     padding: 20px;
+    margin-top: 10px;
     text-align: center;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.228);
     background-color: #5FE886;

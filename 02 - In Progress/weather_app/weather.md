@@ -23,7 +23,4 @@
 
 
 # API in use: 
-https://www.meteomatics.com/en/api/request/
-https://www.meteomatics.com/de/wetter-api/#technicaldetails
-
-https://www.meteomatics.com/de/anmelden-free-basic-api-account/
+https://www.weatherapi.com
