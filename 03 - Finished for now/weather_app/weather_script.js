@@ -8,7 +8,7 @@ const fetchWeatherData = () => {
     input.value = "";
     output.innerHTML = "";
     fetch(
-      `http://api.weatherapi.com/v1/current.json?key=7be6c0777a3f4243bd4133728251601&q=${city} deutschland&lang=de`)
+      `http://api.weatherapi.com/v1/current.json?key=7be6c0777a3f4243bd4133728251601&q=${city}&lang=de`)
       .then(response => response.json())
       .then(data => {
           const containerOne = document.createElement("div");

@@ -1,0 +1,84 @@
+body {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'lexend';
+    font-size: 1.2rem;
+    text-align: center;
+    background: linear-gradient(to bottom right, #1d2729, #7a8c8f);
+}
+
+ @font-face {
+    font-family: 'chonburi';
+    src: url("./assets/fonts/chonburi/Chonburi-Regular.ttf");
+ }
+
+ @font-face {
+    font-family: 'lexend';
+    src: url('./assets/fonts/lexend/Lexend-Regular.ttf');
+ }
+
+.header {
+    padding: 20px 80px 20px 80px;
+    background-color: #618991;
+    border-radius: 25px;
+    text-align: center;
+    color: whitesmoke;
+    font-family: 'chonburi';
+    font-size: 3rem;
+}
+
+button {
+    margin: 2vh;
+    padding: 5px 20px;
+    background-color: #4ECFE6;
+    font-family: 'lexend';
+    font-size: 1.2rem;
+    border-radius: 25px;
+    border: none;
+    transition: transform 0.02s;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+button:active {
+    transform: scale(0.9);
+}
+
+
+#question {
+    margin-bottom: 3vh;
+    background-color: #618991;
+    color: whitesmoke;
+    padding: 10px 40px 10px 40px;
+    border-radius: 25px;
+    box-shadow: 0 0 20px;
+}
+
+#answer-container {
+    background-color: #618991;
+    color: whitesmoke;
+    border-radius: 25px;
+    padding: 20px 
+}
+
+.new-answer {
+    background-color: #2A3B3E;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.427);
+    border-radius: 25px;
+    padding: 5px;
+    transition: transform 0.02s;
+}
+
+.new-answer:hover {
+    transform: scale(1.1);
+}
+.new-answer:active {
+    transform: scale(0.9);
+}
