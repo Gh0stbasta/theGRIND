@@ -58,7 +58,7 @@ button:active {
     color: whitesmoke;
     padding: 10px 40px 10px 40px;
     border-radius: 25px;
-    box-shadow: 0 0 20px;
+    box-shadow: 0 0 20px rgba(245, 245, 245, 0.4);
 }
 
 #answer-container {
@@ -70,7 +70,7 @@ button:active {
 
 .new-answer {
     background-color: #2A3B3E;
-    box-shadow: 0 0 5px rgba(255, 255, 255, 0.427);
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.564);
     border-radius: 25px;
     padding: 5px;
     transition: transform 0.02s;
@@ -81,4 +81,21 @@ button:active {
 }
 .new-answer:active {
     transform: scale(0.9);
+}
+
+.winner {
+    background-color: aquamarine;
+    box-shadow: 0 0 20px rgba(172, 255, 47, 0.738);
+    border-radius: 25px;
+    color: black;
+    padding: 40px;
+    font-size: 2rem;
+}
+
+.looser {
+    background-color: #2A3B3E;
+    box-shadow: 0 0 20px rgba(255, 68, 0, 0.671);
+    padding: 40px;
+    font-size: 2rem;
+    border-radius: 25px;
 }
