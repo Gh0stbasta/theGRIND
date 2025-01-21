@@ -1,6 +1,6 @@
 @font-face {
-  font-family: "goldman";
-  src: url("./Goldman-Regular.ttf");
+  font-family: "space";
+  src: url("./SpaceMono-Regular.ttf");
 }
 
 * {
@@ -16,7 +16,7 @@ body {
   justify-content: center;
   align-items: center;
   background: radial-gradient(#614c3c, #2b3536);
-  font-family: "goldman";
+  font-family: "space";
   color: white;
 }
 
@@ -26,13 +26,15 @@ h1 {
   margin: 5vh;
 }
 
-.watch {
-  font-size: 3rem;
+#watch {
+  width: 50vw;
+  font-size: 4rem;
   border: 2px solid #a1673b;
   filter: drop-shadow(0 0 10px #a1673b);
   border-radius: 25px;
   padding: 40px;
   margin: 5vh;
+  text-align: center;
 }
 
 button {
@@ -43,7 +45,7 @@ button {
   margin: 0 5px 0 5px;
   padding: 5px 10px 5px 10px;
   background-color: transparent;
-  font-family: "goldman";
+  font-family: "space";
   color: white;
   transition: transform 0.1s;
 }
