@@ -20,3 +20,9 @@
 18. **Eingabefelder nach Umrechnung leeren**: Leere die Eingabefelder nach der Umrechnung.
 19. **Wechselkurse im lokalen Speicher speichern**: Speichere die Wechselkurse im lokalen Speicher.
 20. **Wechselkurse beim Laden der Seite wiederherstellen**: Lade die Wechselkurse aus dem lokalen Speicher.
+
+
+## Used API
+# freecurrencyapi
+
+https://api.freecurrencyapi.com/v1/latest?apikey=fca_live_se65cYExpTw06iglaxNMAIDFQTHDQq4rFeDR7som&currencies=USD&base_currency=EUR
