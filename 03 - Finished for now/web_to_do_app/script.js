@@ -129,4 +129,3 @@ const save_to_browser = () => {
   localStorage.clear();
   localStorage.setItem("toDoArray", JSON.stringify(toDoArray));
 };
-

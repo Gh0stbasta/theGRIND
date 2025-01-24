@@ -14,6 +14,7 @@ function calculateResult() {
       `https://api.freecurrencyapi.com/v1/latest?apikey=fca_live_se65cYExpTw06iglaxNMAIDFQTHDQq4rFeDR7som&currencies=${to}&base_currency=${from}`)
       .then(response => response.json())
       .then((data) => {
+        console.log(data);
         rate = eval(key);
         result = amount * rate;
         output.value = result.toFixed(2);
