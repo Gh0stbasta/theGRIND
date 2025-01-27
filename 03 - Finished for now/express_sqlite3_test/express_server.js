@@ -1,7 +1,6 @@
 // This is the simple part... just importing the module
 import express from "express";
 
-
 // crating the server on port 8080
 const app = express();
 const port = 8080;
