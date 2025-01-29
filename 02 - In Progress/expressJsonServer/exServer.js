@@ -1,13 +1,13 @@
 import express from "express";
 import {
   countryData,
-  islandData,
   cityData,
   riverData,
   mountainData,
   lakeData,
   desertData,
   oceanData,
+  islandData,
   volcanoData,
   forestData,
   waterfallData,
@@ -16,6 +16,226 @@ import {
 const app = express();
 const port = 3000;
 app.use(express.json());
+
+class Country {
+  constructor(id, country, capital, population) {
+    this.id = parseInt(id);
+    this.country = country;
+    this.capital = capital;
+    this.population = population;
+  }
+}
+
+class City {
+  constructor(id, city, country, population) {
+    this.id = parseInt(id);
+    this.city = city;
+    this.country = country;
+    this.population = population;
+  }
+}
+
+class River {
+  constructor(id, river, length, continent) {
+    this.id = parseInt(id);
+    this.river = river;
+    this.length = length;
+    this.continent = continent;
+  }
+}
+
+class Mountain {
+  constructor(id, mountain, height, range) {
+    this.id = parseInt(id);
+    this.mountain = mountain;
+    this.height = height;
+    this.range = range;
+  }
+}
+
+class Lake {
+  constructor(id, lake, area, continent) {
+    this.id = parseInt(id);
+    this.lake = lake;
+    this.area = area;
+    this.continent = continent;
+  }
+}
+
+class Desert {
+  constructor(id, desert, area, continent) {
+    this.id = parseInt(id);
+    this.desert = desert;
+    this.area = area;
+    this.continent = continent;
+  }
+}
+
+class Ocean {
+  constructor(id, ocean, area, depth) {
+    this.id = parseInt(id);
+    this.ocean = ocean;
+    this.area = area;
+    this.depth = depth;
+  }
+}
+
+class Island {
+  constructor(id, island, area, country) {
+    this.id = parseInt(id);
+    this.island = island;
+    this.area = area;
+    this.country = country;
+  }
+}
+
+class Volcano {
+  constructor(id, volcano, height, location) {
+    this.id = parseInt(id);
+    this.volcano = volcano;
+    this.height = height;
+    this.location = location;
+  }
+}
+
+class Forest {
+  constructor(id, forest, area, location) {
+    this.id = parseInt(id);
+    this.forest = forest;
+    this.area = area;
+    this.location = location;
+  }
+}
+
+class Waterfall {
+  constructor(id, waterfall, height, location) {
+    this.id = parseInt(id);
+    this.waterfall = waterfall;
+    this.height = height;
+    this.location = location;
+  }
+}
+
+app.put("/waterfalls", (req, res) => {
+  try {
+    const { id, waterfall, height, location } = req.query;
+    const entry = new Waterfall(id, waterfall, height, location);
+    waterfallData.push(entry);
+    res.status(201).send({ message: "Added waterfall", entry });
+  } catch (error) {
+    res.status(500).send({ error: "Couldnt add waterfall" });
+  }
+});
+
+app.put("/forests", (req, res) => {
+  try {
+    const { id, forest, area, location } = req.query;
+    const entry = new Forest(id, forest, area, location);
+    forestData.push(entry);
+    res.status(201).send({ message: "Added Forest to the woods :)", entry });
+  } catch (error) {
+    res.status(500).send({ error: "Couldnt add forest" });
+  }
+});
+
+app.put("/volcanos", (req, res) => {
+  try {
+    const { id, volcano, height, location } = req.query;
+    const entry = new Volcano(id, volcano, height, location);
+    volcanoData.push(entry);
+    res.status(201).send({ message: "Volcano added", entry });
+  } catch (error) {
+    res.status(500).send({ error: "Couldnt add Volcano to the list" });
+  }
+});
+
+app.put("/islands", (req, res) => {
+  try {
+    const { id, island, area, country } = req.query;
+    const entry = new Island(id, island, area, country);
+    islandData.push(entry);
+    res.status(201).send({ message: "Island added", entry });
+  } catch (error) {
+    res.status(500).send({ error: "couldnt add island" });
+  }
+});
+
+app.put("/oceans", (req, res) => {
+  try {
+    const { id, ocean, area, depth } = req.query;
+    const entry = new Ocean(id, ocean, area, depth);
+    oceanData.push(entry);
+    res.status(201).send({ message: "Ocean added", entry });
+  } catch (error) {
+    res.status(500).send({ error: "Couldn't add Ocean to the sea" });
+  }
+});
+
+app.put("/deserts", (req, res) => {
+  try {
+    const { id, desert, area, continent } = req.query;
+    const entry = new Desert(id, desert, area, continent);
+    desertData.push(entry);
+    res.status(201).send({ message: "Desert added ... yummi", entry });
+  } catch (error) {
+    res.status(500).send({ error: "Couldn't add Desert" });
+  }
+});
+
+app.put("/lakes", (req, res) => {
+  try {
+    const { id, lake, area, continent } = req.query;
+    const entry = new Lake(id, lake, area, continent);
+    lakeData.push(entry);
+    res.status(201).send({ message: "Lake added", entry });
+  } catch (error) {
+    res.status(500).send({ error: "Couldn't add lake" });
+  }
+});
+
+app.put("/mountains", (req, res) => {
+  try {
+    const { id, mountain, height, range } = req.query;
+    const entry = new Mountain(id, mountain, height, range);
+    mountainData.push(entry);
+    res.status(201).send({ message: "mountain added", entry });
+  } catch (error) {
+    res.status(500).send({ error: "Couldn't add mountain" });
+  }
+});
+
+app.put("/rivers", (req, res) => {
+  try {
+    const { id, river, length, continent } = req.query;
+    const entry = new River(id, river, length, continent);
+    riverData.push(entry);
+    res.status(201).send({ message: "River added", entry });
+  } catch (error) {
+    res.status(500).send({ error: "couldnt add River" });
+  }
+});
+
+app.put("/citys", (req, res) => {
+  try {
+    const { id, city, country, population } = req.query;
+    const entry = new City(id, city, country, population);
+    cityData.push(entry);
+    res.status(201).send({ message: "City added", entry });
+  } catch (error) {
+    res.status(500).send({ error: "Couldnt add city" });
+  }
+});
+
+app.put("/countrys", (req, res) => {
+  try {
+    const { id, country, capital, population } = req.query;
+    const entry = new Country(id, country, capital, population);
+    countryData.push(entry);
+    res.send({ message: "Country added", entry });
+  } catch (error) {
+    res.status(500).send({ error: "failed to add Country" });
+  }
+});
 
 app.delete("/countrys/:id", (req, res) => {
   const id = parseInt(req.params.id);
