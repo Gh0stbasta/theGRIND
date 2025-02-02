@@ -21,9 +21,11 @@ const sendToDatabase = () => {
     },
     body: JSON.stringify(user),
   })
-    .then((response) => response.json())
+    .then((response) => response.text())
     .then((data) => {
       console.log("Did it: ", data);
+      nameInput.value = "";
+      ageInput.value = "";
     })
     .catch((err) => {
       console.log("Didnt work out: ", err);
