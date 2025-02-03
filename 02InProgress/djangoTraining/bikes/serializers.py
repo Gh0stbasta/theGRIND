@@ -9,5 +9,6 @@ class BikeSerializer(serializers.ModelSerializer):
             'brand',
             'modelname',
             'weight',
-            'cost'
+            'cost',
+            'img'
         ]

@@ -7,6 +7,7 @@ class Bike(models.Model):
     modelname = models.CharField(max_length=20)
     weight = models.FloatField()
     cost = models.FloatField()
+    img = models.CharField(max_length=1000, null=True, blank=True)
 
 
     def __str__(self):

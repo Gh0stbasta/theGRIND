@@ -2,6 +2,11 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: 'liter';
+  src: url("./assets/fonts/Liter-Regular.ttf");
+}
+
 body {
   background: radial-gradient(#0af17a, #046935);
   padding: 0;
@@ -12,8 +17,12 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: 'liter';
   color: white;
+}
+
+h1{
+  font-size: 4vh;
 }
 
 .bike-card {
@@ -21,28 +30,58 @@ body {
   justify-content: center;
   align-items: center;
   border: 1px solid #0af17a;
-  box-shadow: 0 0 10px #0af17a;
-  padding: 0 20px;
+  box-shadow: 0 0 1vh #0af17a;
+  padding: 0 2vh;
   margin-top: 5vh;
-  border-radius: 20px;
+  border-radius: 2vh;
 }
 
 .bike-modelname {
   text-align: center;
-  font-size: 2rem;
+  font-size: 3.5vh;
+  border: 2px solid #0af17a;
+  box-shadow: 0 0 10px #0af17a;
+  border-radius: 2vh;
+  padding: 1vh 1vw 1vh 1vh;
 }
 
 .img-bike {
-  height: 30vh;
-  border-radius: 20vw;
-  margin: 10vh 5vw 3vh 0vw;
+  height: 25vh;
+  border-radius: 5vw;
+  margin: 5vh 2vw 3vh 0vw;
+  box-shadow: 0 0 10px #068b46;
 }
 
 .bike-data {
   padding: 0 2vw 0 10vw;
-  font-size: 1.5rem;
+  font-size: 2.5vh;
   color: white;
   background-color: #068b46;
   border-radius: 20vw;
   box-shadow: 0 0 10px #0af17a;
+  margin: 2vh;
+  text-align: right;
+}
+
+.get-bike {
+  border: none;
+  padding: 1.5vh 3vw;
+  border-radius: 2vh;
+  font-size: 3vh;
+  font-family: 'liter';
+  color: white;
+  background-color: #068b46;
+  box-shadow: 0 0 10px #0af17a;
+  transition: transform 0.1s ease-in-out;
+}
+
+button:hover {
+  transform: scale(1.05);
+
+}
+
+button:active {
+  transform: scale(0.95);
+  background-color: #0af17a;
+  box-shadow: 0 0 10px #068b46;
 }
