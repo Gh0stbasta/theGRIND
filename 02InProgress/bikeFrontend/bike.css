@@ -1,0 +1,48 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: radial-gradient(#0af17a, #046935);
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: white;
+}
+
+.bike-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #0af17a;
+  box-shadow: 0 0 10px #0af17a;
+  padding: 0 20px;
+  margin-top: 5vh;
+  border-radius: 20px;
+}
+
+.bike-modelname {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.img-bike {
+  height: 30vh;
+  border-radius: 20vw;
+  margin: 10vh 5vw 3vh 0vw;
+}
+
+.bike-data {
+  padding: 0 2vw 0 10vw;
+  font-size: 1.5rem;
+  color: white;
+  background-color: #068b46;
+  border-radius: 20vw;
+  box-shadow: 0 0 10px #0af17a;
+}
