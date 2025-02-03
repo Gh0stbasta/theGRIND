@@ -1,0 +1,50 @@
+{
+"image":"mcr.microsoft.com/devcontainers/universal:2",
+
+// Add a name for the dev container
+"name": "Jarvis",
+
+"customizations": {
+    "vscode": {
+        // Specify settings for VS Code
+        "settings": {
+            "terminal.integrated.shell.linux": "/bin/bash"
+        },
+
+        // List of extensions to install in the container
+        "extensions": [
+            "ms-vscode.cpptools",
+            "ms-python.python",
+            "dbaeumer.vscode-eslint",
+            "esbenp.prettier-vscode",
+            "ms-azuretools.vscode-docker",
+            "ms-vscode-remote.remote-containers",
+            "ms-vscode.go",
+            "redhat.vscode-yaml",
+            "streetsidesoftware.code-spell-checker",
+            "visualstudioexptteam.vscodeintellicode",
+            "GitHub.copilot",
+            "alexcvzz.vscode-sqlite"
+        ]
+    }
+},
+
+// Forward ports from the container to the host
+"forwardPorts": [3000, 3001],
+
+// Set environment variables
+"remoteEnv": {
+    "MY_ENV_VAR": "value"
+},
+
+// Run commands after the container is created
+"postCreateCommand": "echo Hello, World!",
+
+// Mount local folders into the container
+"mounts": [
+    "source=/local/path,target=/container/path,type=bind"
+],
+
+// Override default container user
+"remoteUser": "vscode"
+}

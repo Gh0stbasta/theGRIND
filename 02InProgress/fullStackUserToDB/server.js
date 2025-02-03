@@ -1,5 +1,5 @@
-import express from "express";
-import sqlite3 from "sqlite3";
+const express = require('express'); 
+const sqlite3 = require('sqlite3');
 
 // Heres the Database Stuff
 const db = new sqlite3.Database("users.db", (err) => {
