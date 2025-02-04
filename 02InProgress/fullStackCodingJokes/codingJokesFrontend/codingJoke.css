@@ -1,0 +1,86 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'barrio';
+    background: linear-gradient(to top right, #E630A6, #43E630);
+    color: white;
+}
+
+@font-face {
+    font-family: 'barrio';
+    src: url('./assets/fonts/Barrio-Regular.ttf');
+}
+
+.headline {
+    font-size: 3rem;
+    text-align: center;
+    filter: drop-shadow(0 0 10px #3C3439);
+}
+
+.btn-joke {
+    font-family: 'barrio';
+    font-size: 2rem;
+    padding: 2vh;
+    border: none;
+    background-color: #8F3570;
+    box-shadow: 0 0 20px #8F3570;
+    color: white;
+    transition: transform 0.15s ease-in-out, background-color 0.15s, box-shadow 0.15s;
+    display: block;
+    margin: 0 auto;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background-color: #43E630;
+    box-shadow: 0 0 20px #43E630;
+}
+
+button:active{
+    transform: scale(0.95);
+}
+
+.joke-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.joke {
+    font-size: 2rem;
+    text-align: center;
+    padding: 3vw;
+    filter: drop-shadow(0 0 10px #3C3439);
+    border: 4px solid #43E630;
+    box-shadow: 0 0 10px #43E630;
+    margin: 2vh;
+}
+
+.gif {
+    height: 30vh;
+    border: 4px solid #43E630;
+    box-shadow: 0 0 10px #43E630;
+    display: block;
+    margin: 0 auto;
+}
+
+.punchline {
+    font-size: 2rem;
+    text-align: center;
+    padding: 3vw;
+    filter: drop-shadow(0 0 10px #3C3439);
+    border: 4px solid #43E630;
+    box-shadow: 0 0 10px #43E630;
+    margin: 2vh;
+}

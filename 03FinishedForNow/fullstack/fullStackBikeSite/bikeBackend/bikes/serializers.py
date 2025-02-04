@@ -12,3 +12,5 @@ class BikeSerializer(serializers.ModelSerializer):
             'cost',
             'img'
         ]
+
+

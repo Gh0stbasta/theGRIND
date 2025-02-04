@@ -1,13 +1,15 @@
 const btnGetBike = document.getElementById("get-bike");
-const bikeCard = document.getElementById("bike-card");
+const content = document.getElementById("content");
 
 const getBike = () => {
   fetch("http://127.0.0.1:8000/bikes/")
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
+      content.innerHTML = "";
+
       const randomIndex = Math.floor(Math.random() * data.length);
-      bikeCard.textContent = "";
+      const bikeCard = document.createElement("div");
+      bikeCard.setAttribute("class", "bike-card");
 
       const imgContainer = document.createElement("img");
       imgContainer.setAttribute("class", "img-bike");
@@ -39,6 +41,8 @@ const getBike = () => {
 
       bikeCard.appendChild(imgContainer);
       bikeCard.appendChild(bikeDataContainer);
+
+      content.appendChild(bikeCard);
     });
 };
 
