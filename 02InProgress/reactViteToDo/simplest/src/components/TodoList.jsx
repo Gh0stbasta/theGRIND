@@ -1,16 +1,18 @@
 /* eslint-disable react/prop-types */
-import TodoItem from "./TodoItem.jsx"
+import TodoItem from "./TodoItem.jsx";
 
-
-const TodoList = ({ todos, deleteTodo}) => {
+const TodoList = ({ todos, deleteTodo, toggleTodo }) => {
   return (
-    <>
-      {
-        todos.map((todo, index) => (
-            <TodoItem key={index} todo={todo} deleteTodo={() => deleteTodo(index)} />
-        ))
-      }
-    </>
+    <div>
+      {todos.map((todo, index) => (
+        <TodoItem
+          key={index}
+          todo={todo}
+          deleteTodo={() => deleteTodo(index)}
+          toggleTodo={() => toggleTodo(index)}
+        />
+      ))}
+    </div>
   );
 };
 
