@@ -38,6 +38,12 @@ span {
   flex-grow: 1;
   margin: 0vh 1vw 0vh 0vw;
   border-radius: 1vw;
+  transition: border-color 0.1s ease-in-out;
+}
+
+span:hover {
+  border-color: rgba(255, 251, 251, 0.546);
+  cursor: pointer;
 }
 
 form {
