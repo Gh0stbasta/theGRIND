@@ -1,0 +1,37 @@
+body {
+    color: #ECF0F1; /* Light gray color */
+    font-family: 'Courier New', Courier, monospace; /* Monospaced font for an edgy look */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    background-image: url('https://www.transparenttextures.com/patterns/asfalt-light.png'), linear-gradient(135deg, #2C3E50, #4CA1AF, #8E44AD, #3498DB);
+    background-blend-mode: overlay;
+}
+
+button {
+    background: linear-gradient(135deg, #8E44AD, #3498DB); /* Purple to blue */
+    color: #ffffff;
+    border: 3px solid #2C3E50; /* Dark blue border */
+    padding: 15px 30px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border-radius: 5px; /* Sharper corners */
+    display: block;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* Stronger shadow */
+    font-family: 'Courier New', Courier, monospace;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #3498DB, #8E44AD); /* Blue to purple */
+    transform: scale(1.1) rotate(5deg); /* Slight rotation for edginess */
+}
+
+button:active {
+    background: linear-gradient(135deg, #8E44AD, #3498DB); /* Purple to blue */
+}
