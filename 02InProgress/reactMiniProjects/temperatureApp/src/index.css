@@ -1,0 +1,58 @@
+body {
+  background-image: url("https://www.transparenttextures.com/patterns/gplay.png");
+  background-color: #2f6b58;
+  color: #3e523e;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  letter-spacing: 0.05em;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #2f6b58;
+  color: #f5f5dc;
+  border: 2px solid #3e523e;
+  cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 4rem;
+  transition: background-color 0.3s, color 0.3s;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0 0px 0;
+  margin: 5px;
+}
+
+button:hover {
+  background-color: #55b999;
+  color: #fff;
+}
+
+p {
+  font-size: 1.2em;
+  line-height: 1.5;
+  margin: 20px 0;
+  border: 2px solid #3e523e;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.app {
+  border: 2px solid #8fbc8f;
+  border-radius: 50%;
+  padding: 90px;
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  height: 300px;
+  width: 300px;
+}

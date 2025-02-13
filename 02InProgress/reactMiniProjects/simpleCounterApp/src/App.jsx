@@ -4,7 +4,7 @@ import { useState } from "react";
 const App = () => {
   const [count, setCount] = useState(1);
 
-  const array = Array.from({length: count})
+  const array = Array.from({ length: count });
 
   return (
     <>
