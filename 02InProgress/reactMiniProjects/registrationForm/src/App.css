@@ -1,7 +1,7 @@
 body {
-  font-family: 'Courier New', Courier, monospace;
-  background: url("https://www.transparenttextures.com/patterns/cubes.png"), #111;
-  color: #33cc33;
+  font-family: "Star Jedi", "Courier New", Courier, monospace;
+  background: url("https://www.transparenttextures.com/patterns/stardust.png"), #000;
+  color: #ffd700; /* Softer yellow */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,39 +12,44 @@ body {
 h1 {
   font-size: 24px;
   margin-bottom: 20px;
-  color: #33cc33;
+  color: #ffd700; /* Softer yellow */
   text-align: center;
+  text-transform: uppercase;
 }
 
 .registration-card {
-  background-color: #222;
+  background-color: rgba(0, 0, 0, 0.8);
   padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(51, 204, 51, 0.2);
+  box-shadow: 0 4px 8px rgba(255, 215, 0, 0.2); /* Softer yellow */
   width: 300px;
+  clip-path: polygon(0 0, 90% 0, 100% 10%, 100% 100%, 10% 100%, 0 90%);
+  position: relative;
+  z-index: 3;
+  border: 2px solid #ffd700; /* Softer yellow */
 }
 
 input {
   width: 93%;
   padding: 10px;
   margin: 10px 0;
-  border: 1px solid #33cc33;
+  border: 1px solid #ffd700; /* Softer yellow */
   border-radius: 4px;
-  background-color: #111;
-  color: #33cc33;
+  background-color: #000;
+  color: #ffd700; /* Softer yellow */
 }
 
 button {
   width: 100%;
   padding: 10px;
-  background-color: #33cc33;
-  color: #111;
+  background-color: #ffd700; /* Softer yellow */
+  color: #000;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
+  text-transform: uppercase;
 }
 
 button:hover {
-  background-color: #28a428;
+  background-color: #d4be0e;
 }
