@@ -1,0 +1,50 @@
+body {
+  font-family: 'Courier New', Courier, monospace;
+  background: url("https://www.transparenttextures.com/patterns/cubes.png"), #111;
+  color: #33cc33;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #33cc33;
+  text-align: center;
+}
+
+.registration-card {
+  background-color: #222;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(51, 204, 51, 0.2);
+  width: 300px;
+}
+
+input {
+  width: 93%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #33cc33;
+  border-radius: 4px;
+  background-color: #111;
+  color: #33cc33;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #33cc33;
+  color: #111;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #28a428;
+}
