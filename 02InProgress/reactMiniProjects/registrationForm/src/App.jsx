@@ -9,9 +9,31 @@ const App = () => {
     email: "",
   });
 
+  const [success, setSuccess] = useState(false);
+  const [failed, setFailed] = useState(false);
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(registration);
+    fetch('http://localhost:3000/register', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(registration),
+    })
+    .then(response => response.json())
+    .then(data => {
+      setSuccess(true);
+      console.log('Success:', data);
+    })
+    .catch((error) => {
+      setFailed(true);
+      console.log('Error:', error);
+    });
+    setTimeout(() => {
+      setSuccess(false);
+      window.location.reload();
+    }, 5000);
   };
 
   return (
@@ -21,6 +43,8 @@ const App = () => {
         registration={registration}
         setRegistration={setRegistration}
         handleSubmit={handleSubmit}
+        success={success}
+        failed={failed}
       />
     </>
   );

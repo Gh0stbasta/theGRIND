@@ -1,8 +1,10 @@
 /* eslint-disable react/prop-types */
-const Registration = ({ registration, setRegistration, handleSubmit }) => {
+const Registration = ({ registration, setRegistration, handleSubmit, success, failed }) => {
   return (
     <div className="registration-card">
       <form onSubmit={handleSubmit}>
+        {success && <p>Registration successful!</p>}
+        {failed && <p>Registration failed. Please try again.</p>}
         <input
           type="text"
           placeholder="Name"
