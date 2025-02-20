@@ -1,36 +1,34 @@
 import React, { useState } from "react";
 import QuestionCard from "./components/QuestionCard.jsx";
+import Score from "./components/Score.jsx";
+
 
 function App() {
   const [score, setScore] = useState(0);
   const [question, setQuestion] = useState({});
   const [questionNumber, setQuestionNumber] = useState(0);
-  const questions = [];
+  const [questions, setQuestions] = useState([]);
 
   React.useEffect(() => {
     fetch("https://opentdb.com/api.php?amount=10&category=14&difficulty=easy")
       .then((response) => response.json())
       .then((data) => {
-        questions.push(...data.results);
-        console.log(questions);
+        setQuestions([...data.results]);
+        console.log(data.results);
       })
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
 
-  function getQuestion() {
-    if (questions.length > 0) {
-      setQuestion(questions[questionNumber]);
-      setQuestionNumber(questionNumber + 1);
-    }
-  }
-
   return (
     <div>
-      <h1>Hello World</h1>
+      <h1 className="headline">THE QUIZ</h1>
       {Object.keys(question).length === 0 ? (
         <div>
           <p>Welcome to the film quiz!</p>
-          <button className="primary-button" onClick={getQuestion}>
+          <button
+            className="primary-button"
+            onClick={() => setQuestion(questions[questionNumber])}
+          >
             Get first Question
           </button>
         </div>
@@ -43,7 +41,15 @@ function App() {
             setScore={setScore}
             score={score}
           />
-          <button className="primary-button" onClick={getQuestion}>
+            <Score score={score} />
+          <button
+            className="primary-button"
+            onClick={() => {
+              const nextQuestionNumber = questionNumber + 1;
+              setQuestionNumber(nextQuestionNumber);
+              setQuestion(questions[nextQuestionNumber]);
+            }}
+          >
             Next Question
           </button>
         </div>

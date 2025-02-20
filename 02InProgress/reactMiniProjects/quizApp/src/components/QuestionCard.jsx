@@ -18,7 +18,7 @@ const QuestionCard = ({
 
   return (
     <div className="question-card">
-      <p>{question}</p>
+      <p className="question">{question}</p>
       <div className="answers-container">
         {answers.map((answer, index) => (
           <button
