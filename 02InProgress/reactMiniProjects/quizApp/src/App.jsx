@@ -2,15 +2,23 @@ import React, { useState } from "react";
 import QuestionCard from "./components/QuestionCard.jsx";
 import Score from "./components/Score.jsx";
 
-
 function App() {
   const [score, setScore] = useState(0);
   const [question, setQuestion] = useState({});
   const [questionNumber, setQuestionNumber] = useState(0);
   const [questions, setQuestions] = useState([]);
+  const [gameOver, setGameOver] = useState(false);
+
+  function nextQuestion() {
+    const nextQuestionNumber = questionNumber + 1;
+    setQuestionNumber(nextQuestionNumber);
+    setQuestion(questions[nextQuestionNumber]);
+  }
 
   React.useEffect(() => {
-    fetch("https://opentdb.com/api.php?amount=10&category=14&difficulty=easy")
+    fetch(
+      "https://opentdb.com/api.php?amount=10&category=11&difficulty=easy&encode=url3986"
+    )
       .then((response) => response.json())
       .then((data) => {
         setQuestions([...data.results]);
@@ -19,10 +27,24 @@ function App() {
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
 
+  React.useEffect(() => {
+    if (score && !gameOver) {
+      nextQuestion();
+    }
+  }, [score, gameOver]);
+
+  React.useEffect(() => {
+    if (questionNumber === questions.length && questionNumber !== 0) {
+      setGameOver(true);
+    }
+  }, [questionNumber, questions.length]);
+
   return (
     <div>
       <h1 className="headline">THE QUIZ</h1>
-      {Object.keys(question).length === 0 ? (
+      {gameOver ? (
+        <p>Game over. Your score: {score}</p>
+      ) : Object.keys(question).length === 0 ? (
         <div>
           <p>Welcome to the film quiz!</p>
           <button
@@ -40,16 +62,11 @@ function App() {
             incorrect_answers={question.incorrect_answers}
             setScore={setScore}
             score={score}
+            questionNumber={questionNumber}
+            setQuestionNumber={setQuestionNumber}
           />
-            <Score score={score} />
-          <button
-            className="primary-button"
-            onClick={() => {
-              const nextQuestionNumber = questionNumber + 1;
-              setQuestionNumber(nextQuestionNumber);
-              setQuestion(questions[nextQuestionNumber]);
-            }}
-          >
+          <Score score={score} />
+          <button className="primary-button" onClick={() => nextQuestion()}>
             Next Question
           </button>
         </div>

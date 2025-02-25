@@ -4,7 +4,7 @@ const QuestionCard = ({
   correct_answer,
   incorrect_answers,
   score,
-  setScore,
+  setScore
 }) => {
   const answers = [correct_answer, ...incorrect_answers].sort(
     () => Math.random() - 0.5
@@ -13,12 +13,14 @@ const QuestionCard = ({
   const handleAnswerClick = (answer) => {
     if (answer === correct_answer) {
       setScore(score + 1);
+    } else {
+      setScore(score - 1);
     }
   };
 
   return (
     <div className="question-card">
-      <p className="question">{question}</p>
+      <p className="question">{decodeURIComponent(question)}</p>
       <div className="answers-container">
         {answers.map((answer, index) => (
           <button
@@ -26,7 +28,7 @@ const QuestionCard = ({
             className="answer-button"
             onClick={() => handleAnswerClick(answer)}
           >
-            {answer}
+            {decodeURIComponent(answer)}
           </button>
         ))}
       </div>
