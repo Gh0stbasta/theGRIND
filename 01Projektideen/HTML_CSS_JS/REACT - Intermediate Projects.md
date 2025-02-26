@@ -2,12 +2,8 @@
 
 Der Link beinhaltet viele kleine Projekete, um wirklich Stück für Stück von vorne zu lernen
 
-1. Hello World App
-2. Simple Counter
-3. Temperature Control App
-4. Search Filter
-5. Basic Registration Form
-6. React Quiz App
+Start bei Nummber 7. Das geht über die Basics hinaus.
+
 7. React Navbar
 8. User Login app using Auth0
 9. Todo List

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState } from "react";
 import QuestionCard from "./components/QuestionCard.jsx";
 import Score from "./components/Score.jsx";
