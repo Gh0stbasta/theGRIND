@@ -1,1 +1,1 @@
-Show Score on end
+Finished

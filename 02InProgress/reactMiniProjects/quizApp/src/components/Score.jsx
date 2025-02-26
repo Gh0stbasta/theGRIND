@@ -2,7 +2,7 @@
 const Score = ({ score }) => {
   return (
     <div className="score-container">
-      <p className="score">{score}</p>
+      <p className="score">Current Score: {score}</p>
     </div>
   );
 };

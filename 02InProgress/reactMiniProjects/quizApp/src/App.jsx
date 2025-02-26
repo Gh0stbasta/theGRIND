@@ -28,13 +28,13 @@ function App() {
   }, []);
 
   React.useEffect(() => {
-    if (score && !gameOver) {
+    if (!gameOver && Object.keys(question).length !== 0) {
       nextQuestion();
     }
-  }, [score, gameOver]);
+  }, [score]);
 
   React.useEffect(() => {
-    if (questionNumber === questions.length && questionNumber !== 0) {
+    if (questionNumber !== 0 && questionNumber + 1 === questions.length) {
       setGameOver(true);
     }
   }, [questionNumber, questions.length]);
@@ -43,13 +43,24 @@ function App() {
     <div>
       <h1 className="headline">THE QUIZ</h1>
       {gameOver ? (
-        <p>Game over. Your score: {score}</p>
-      ) : Object.keys(question).length === 0 ? (
-        <div>
-          <p>Welcome to the film quiz!</p>
+        <>
+          <p className="scoreboard">Game over. Your score: {score}</p>
           <button
             className="primary-button"
-            onClick={() => setQuestion(questions[questionNumber])}
+            onClick={() => window.location.reload()}
+          >
+            New Game
+          </button>
+        </>
+      ) : Object.keys(question).length === 0 ? (
+        <div>
+          <p className="scoreboard">Welcome to the film quiz!</p>
+          <button
+            className="primary-button"
+            onClick={() => {
+              setQuestion(questions[questionNumber]);
+              setGameOver(false);
+            }}
           >
             Get first Question
           </button>
