@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Spiel</title>
+</head>
+<body>
+  <h1>Kampf läuft</h1>
+  <p id="info">Verbindung...</p>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    const socket = io();
+    const params = new URLSearchParams(window.location.search);
+    const room = params.get("room");
+
+    socket.emit("joinGame", room);
+    document.getElementById("info").innerText = "Im Raum: " + room;
+  </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lobby</title>
+  </head>
+  <body>
+    <h1>Spiel-Lobby</h1>
+    <button id="start">Neues Spiel starten</button>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      const socket = io();
+
+      document.getElementById("start").onclick = () => {
+        socket.emit("createGame");
+        document.getElementById("start").disabled = true;
+      };
+
+      socket.on("gameCreated", (roomId) => {
+        window.location.href = "/spiel.html?room=" + roomId;
+      });
+    </script>
+  </body>
+</html>
