@@ -1,0 +1,91 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Fira Mono', 'Consolas', 'Courier New', monospace;
+}
+
+body {
+    background: #101010;
+    color: #33ff33;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+button {
+    background: #111;
+    color: #33ff33;
+    border: 1px solid #33ff33;
+    border-radius: 4px;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px #33ff3340;
+    margin-left: 5px;
+    text-shadow: 0 0 5px #33ff33;
+}
+
+button:hover, button:focus {
+    background: #33ff33;
+    color: #101010;
+    box-shadow: 0 0 10px #33ff33, 0 0 20px #33ff33;
+}
+
+input {
+    background: #181818;
+    color: #33ff33;
+    border: 1px solid #33ff33;
+    border-radius: 4px;
+    padding: 0.5em 1em;
+    font-size: 1em;
+    margin-right: 0.5em;
+    outline: none;
+    transition: border 0.2s, box-shadow 0.2s;
+    box-shadow: 0 0 5px #33ff3340;
+}
+
+input:focus {
+    border-color: #00ff99;
+    box-shadow: 0 0 10px #00ff99;
+}
+
+.top {
+    background: #181818;
+    padding: 2em 2em 1em 2em;
+    box-shadow: 0 2px 16px #33ff3320;
+    margin-bottom: 2em;
+    border: 1px solid #33ff33;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    background: #181818;
+    margin-bottom: 1em;
+    padding: 1em 1.5em;
+    border-radius: 4px;
+    box-shadow: 0 1px 8px #33ff3320;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    border: 1px solid #33ff33;
+    text-shadow: 0 0 5px #33ff33;
+}
+
+.content {
+    max-width: 600px;
+    margin: 3em auto;
+    padding: 2em;
+    background: #181818;
+    border-radius: 8px;
+    box-shadow: 0 4px 32px #33ff3320;
+    border: 1px solid #33ff33;
+}
