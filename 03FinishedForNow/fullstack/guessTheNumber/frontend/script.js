@@ -5,7 +5,6 @@ const userGuess = document.getElementById("user-guess");
 const btnGuess = document.getElementById("btn-guess");
 const guesses = document.getElementById("guesses");
 
-
 //guessing part
 btnGuess.addEventListener("click", () => {
   const guess = userGuess.value;
@@ -13,7 +12,6 @@ btnGuess.addEventListener("click", () => {
     .then((response) => response.json())
     .then((data) => {
       const gameNumber = data.gameNumber;
-      console.log(gameNumber);
       if (parseInt(guess) === gameNumber) {
         guesses.innerHTML = `You did it in ${++guessCounter} guesses`;
       } else {
@@ -23,12 +21,11 @@ btnGuess.addEventListener("click", () => {
     });
 });
 
-
 //enter score part
 const playerName = document.getElementById("player-name");
 const btnSaveScore = document.getElementById("btn-save-score");
 btnSaveScore.addEventListener("click", () => {
-  const name = playerName.value.trim();
+  const name = playerName.value;
   const score = guessCounter;
 
   fetch(`http://${server}/leaderboard`, {
@@ -42,7 +39,6 @@ btnSaveScore.addEventListener("click", () => {
     .then((data) => {
       leaderboard.innerHTML = "Score saved!";
     });
-
   //show leaderboard after half a second
   setTimeout(updateLeaderboard, 500);
 });
@@ -52,18 +48,12 @@ function updateLeaderboard() {
   fetch(`http://${server}/leaderboard`)
     .then((response) => response.json())
     .then((data) => {
-      if (Array.isArray(data)) {
-        leaderboard.innerHTML =
-          "<ol>" +
-          data
-            .map(
-              (entry) => `<li>${entry.name}: needed ${entry.score} guesses</li>`
-            )
-            .join("") +
-          "</ol>";
-      } else {
-        leaderboard.innerHTML = "No leaderboard data available.";
-      }
+      leaderboard.innerHTML = "";
+      data.forEach((entry) => {
+        const li = document.createElement("li");
+        li.textContent = `${entry.name}: needed ${entry.score} guesses`;
+        leaderboard.appendChild(li);
+      });
     });
 }
 
