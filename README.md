@@ -2,6 +2,16 @@
 
 Ein Repository zur Dokumentation und Organisation von Programmier-Lernprojekten, Projektideen und abgeschlossenen Projekten.
 
+## 📑 Inhaltsverzeichnis
+
+- [Repository-Struktur](#-repository-struktur)
+- [Schnellstart](#-schnellstart)
+- [Technologien](#️-technologien)
+- [Projekt-Kategorien](#-projekt-kategorien)
+- [Projektstruktur Details](#-projektstruktur-details)
+- [Nutzungshinweise](#-nutzungshinweise)
+- [Mitwirken](#-mitwirken)
+
 ## 📁 Repository-Struktur
 
 ### 💡 `01Projektideen` - Projektideen nach Technologie
@@ -11,11 +21,15 @@ Sammlung von Projektideen, organisiert nach Technologiebereichen:
 - **`HTML_CSS_JS/`** - Web-Entwicklung (React, Node.js, Express, JavaScript)
 - **`Python/`** - Python-Projekte (AI/ML, APIs, Scraping, GUI, etc.)
 
+📖 **[Detaillierte Übersicht der Projektideen](01Projektideen/README.md)**
+
 ### 🚧 `02InProgress` - Aktuelle Projekte
 Projekte, die derzeit in Entwicklung sind:
 
 - **`aiTest/`** - KI-Tests und Experimente (OpenAI Integration)
 - **`justTests/`** - Verschiedene Test- und Experimentalprojekte
+
+📖 **[Übersicht der aktuellen Projekte](02InProgress/README.md)**
 
 ### ✅ `03FinishedForNow` - Abgeschlossene Projekte
 Fertige Projekte, kategorisiert nach Typ:
@@ -24,6 +38,8 @@ Fertige Projekte, kategorisiert nach Typ:
 - **`frontend/`** - Frontend-Projekte (React Apps, Calculator, Weather App)
 - **`fullstack/`** - Vollständige Webanwendungen
 - **`nonWeb/`** - Nicht-Web-Projekte (IT Security, File Operations)
+
+📖 **[Komplette Projektübersicht](03FinishedForNow/README.md)**
 
 ## 🚀 Schnellstart
 
@@ -90,6 +106,32 @@ Das Repository umfasst Projekte und Ideen für:
 ## 🤝 Mitwirken
 
 Interessiert an Beiträgen? Siehe [CONTRIBUTING.md](CONTRIBUTING.md) für Richtlinien.
+
+## 📁 Projektstruktur Details
+
+### Typische Projektorganisation
+- **Kleine Projekte**: Meist direkt im Kategorie-Ordner mit HTML/CSS/JS oder Python-Dateien
+- **Node.js Projekte**: Enthalten `package.json` mit Abhängigkeiten und Scripts
+- **Django Projekte**: Enthalten `manage.py` und Django-Projektstruktur
+- **React Projekte**: Meist mit Vite oder Create React App erstellt
+
+### Projektideen Format
+Projektideen folgen dem Schema:
+```
+### Projektidee: [Titel]
+[Beschreibung]
+
+#### Arbeitsschritte:
+1. Schritt 1
+2. Schritt 2
+...
+```
+
+## 💡 Nutzungshinweise
+
+- Viele Projekte sind Lernprojekte und nicht produktionsreif
+- Dependencies können veraltet sein - bitte vor Nutzung aktualisieren
+- Einige Projekte benötigen API-Keys (siehe jeweilige Dokumentation)
 
 ## 📄 Lizenz
 
